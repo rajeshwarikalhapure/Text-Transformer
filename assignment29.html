@@ -1,0 +1,115 @@
+
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Manipulator</title>
+    <style>
+
+body{
+    background-image: url('https://img.freepik.com/premium-photo/top-view-desk-concept-with-copy-space_23-2148459757.jpg?w=1380');
+    background-repeat: no-repeat;
+    background-size: cover;
+                }
+        .main-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .input-container {
+            border-radius: 10px;
+            background-color: #bdd7e9;
+            width: 700px;
+            height: 550px;
+            text-align: center;
+        }
+
+        .input-title {
+            text-align: start;
+            margin-bottom: 0%;
+            margin-left: 20px;
+        }
+
+        .text-input-box {
+            border: none;
+            border-radius: 10px;
+            margin: 20px auto;
+            width: 650px;
+            height: 100px;
+            font-size: 20px;
+        }
+
+        button {
+            background-color: whitesmoke;
+            font-weight: bold;
+            margin: 30px;
+            width: 100px;
+            height: 50px;
+            border: none;
+            border-radius: 10px;
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
+        .output-box {
+            border: none;
+            border-radius: 10px;
+            margin: 10px auto;
+            background-color: white;
+            width: 650px;
+            height: 100px;
+            font-size: 20px;
+            text-align: start;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="input-container">
+            <h1>Text Transfer</h1>
+            <h3 class="input-title">Input</h3>
+            <input type="text" class="text-input-box" id="input-text">
+            <div>
+                <button type="button" onclick="MakeUpperCase()">UPPERCASE</button>
+                <button type="button" onclick="lowerCase()">lowercase</button>
+                <button type="button" onclick="charCount()">Char count</button>
+                <button type="button" onclick="wordCount()">Word count</button>
+            </div>
+            <h3 class="input-title">Output</h3>
+            <p class="output-box" id="result"></p>
+        </div>
+    </div>
+
+    <script>
+        function MakeUpperCase() {
+            const inputElement = document.getElementById("input-text")
+            const resultElement = document.getElementById("result")
+            resultElement.innerText = inputElement.value.toUpperCase()
+        }
+
+        function lowerCase() {
+            const inputElement = document.getElementById("input-text")
+            const resultElement = document.getElementById("result")
+            resultElement.innerText = inputElement.value.toLowerCase()
+        }
+
+        function charCount() {
+            const inputElement = document.getElementById("input-text")
+            const resultElement = document.getElementById("result")
+            resultElement.innerText = `Total Count :${inputElement.value.length}`
+        }
+
+        function wordCount() {
+            const inputElement = document.getElementById("input-text")
+            const resultElement = document.getElementById("result")
+            resultElement.innerText = `Word Count :${inputElement.value.split(" ").length}`
+        }
+    </script>
+</body>
+</html>
